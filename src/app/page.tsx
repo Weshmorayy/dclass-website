@@ -27,37 +27,50 @@ export default function HomePage() {
       <Header />
       <main>
         {/* ═══ §01 — HERO ═══════════════════════════════════════════════════════ */}
-        <section className="relative min-h-screen bg-[#0A0A0A] flex items-center overflow-hidden">
-          {/* Texte centré */}
-          <div className="container-site relative z-10 flex flex-col items-center text-center pt-20">
-            <p className="label-caps text-[#C9A84C] mb-6 tracking-[0.3em]">Dakar · Sénégal</p>
-            <h1 className="heading-display text-white text-6xl md:text-8xl lg:text-[7rem] leading-none mb-6">
-              Luxury<br />Streetwear
-            </h1>
-            <p className="text-white/40 uppercase tracking-[0.25em] text-xs mb-10"
-              style={{ fontFamily: 'var(--font-body)' }}>
-              Fashion · Sportswear · Jewelry · More
-            </p>
-            <Link href="/boutique" className="btn-outline-white">
-              Découvrir la collection <ArrowRight size={16} />
-            </Link>
-          </div>
+        <section className="relative min-h-[90vh] lg:min-h-screen bg-[#0A0A0A] flex items-center overflow-hidden pt-20 pb-16">
+          <div className="container-site relative z-10 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              {/* Contenu Texte */}
+              <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <p className="label-caps text-[#C9A84C] mb-4 md:mb-6 tracking-[0.3em]">Dakar · Sénégal</p>
+                <h1 className="heading-display text-white text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] leading-[0.95] mb-6">
+                  Luxury<br />Streetwear
+                </h1>
+                <p className="text-white/50 uppercase tracking-[0.2em] text-xs sm:text-sm mb-8 md:mb-10 max-w-md"
+                  style={{ fontFamily: 'var(--font-body)' }}>
+                  Fashion · Sportswear · Jewelry · More
+                </p>
+                <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                  <Link href="/boutique" className="btn-primary w-full sm:w-auto justify-center bg-[#C9A84C] text-black hover:bg-white hover:text-black">
+                    Découvrir la collection <ArrowRight size={16} />
+                  </Link>
+                  <Link href="/bijoux" className="btn-outline-white w-full sm:w-auto justify-center">
+                    Voir les bijoux
+                  </Link>
+                </div>
+              </div>
 
-          {/* Buste sculptural — débordant hors cadre */}
-          <div className="absolute bottom-0 right-0 w-[45%] max-w-[480px] h-[85%] pointer-events-none select-none">
-            <Image
-              src="/images/products/Screenshot_20261004_103144_Chrome.jpg"
-              alt="Parure D'class — Or & Émeraude"
-              fill
-              className="object-contain object-bottom"
-              priority
-              sizes="45vw"
-            />
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <div className="w-px h-12 bg-white/20" />
+              {/* Visuel Signature — Grille droite */}
+              <div className="lg:col-span-5 flex justify-center">
+                <div className="relative w-full max-w-[340px] sm:max-w-[400px] aspect-[4/5] bg-[#141414] border border-[#222] overflow-hidden group">
+                  <Image
+                    src="/images/products/Screenshot_20261004_103144_Chrome.jpg"
+                    alt="Parure D'class — Or & Émeraude"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    priority
+                    sizes="(max-width: 1024px) 80vw, 400px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 right-4 text-left">
+                    <p className="label-caps text-[#C9A84C] text-[10px] mb-1">Pièce Signature</p>
+                    <p className="text-white text-sm font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+                      Parure Or &amp; Émeraude
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

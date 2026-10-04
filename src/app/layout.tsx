@@ -1,8 +1,24 @@
 import type { Metadata } from 'next'
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
 import { siteConfig } from '@/config/site'
 import { buildLocalBusinessJsonLd } from '@/lib/seo'
 import { CartProvider } from '@/components/cart/CartProvider'
 import './globals.css'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = buildLocalBusinessJsonLd()
 
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${cormorant.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"

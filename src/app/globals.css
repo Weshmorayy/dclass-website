@@ -7,8 +7,6 @@
    Extraite du logo réel (Brand/Logo-*.png)
    ═══════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap');
-
 :root {
   /* Fonds */
   --color-bg-primary: #FFFFFF;
@@ -28,10 +26,6 @@
   /* Bordures */
   --color-border: #E0D9CE;
   --color-border-dark: #1A1A1A;
-
-  /* Typographie */
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -52,7 +46,7 @@ html {
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-body);
-  font-family: var(--font-body);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,7 +57,7 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading), Georgia, serif;
   line-height: 1.15;
   letter-spacing: -0.01em;
 }
@@ -87,13 +81,13 @@ h1, h2, h3, h4, h5, h6 {
 
   /* Typographie */
   .heading-display {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading), Georgia, serif;
     font-style: italic;
     font-weight: 600;
   }
 
   .label-caps {
-    font-family: var(--font-body);
+    font-family: var(--font-body), system-ui, sans-serif;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.2em;
@@ -101,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .price-tag {
-    font-family: var(--font-body);
+    font-family: var(--font-body), system-ui, sans-serif;
     font-weight: 700;
     color: var(--color-accent);
   }
@@ -109,17 +103,17 @@ h1, h2, h3, h4, h5, h6 {
   /* Boutons */
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 bg-[#0A0A0A] text-white text-sm font-medium tracking-wide transition-all duration-200 hover:bg-[#C9A84C] hover:text-black;
-    font-family: var(--font-body);
+    font-family: var(--font-body), system-ui, sans-serif;
   }
 
   .btn-outline {
     @apply inline-flex items-center gap-2 px-6 py-3 border border-[#0A0A0A] text-[#0A0A0A] text-sm font-medium tracking-wide transition-all duration-200 hover:bg-[#0A0A0A] hover:text-white;
-    font-family: var(--font-body);
+    font-family: var(--font-body), system-ui, sans-serif;
   }
 
   .btn-outline-white {
     @apply inline-flex items-center gap-2 px-6 py-3 border border-white text-white text-sm font-medium tracking-wide transition-all duration-200 hover:bg-white hover:text-[#0A0A0A];
-    font-family: var(--font-body);
+    font-family: var(--font-body), system-ui, sans-serif;
   }
 
   /* Marquee */
